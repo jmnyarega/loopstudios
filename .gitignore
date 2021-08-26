@@ -1,3 +1,6 @@
 .sass-cache
 tags
 node_modules/
+
+# Local Netlify folder
+.netlify
