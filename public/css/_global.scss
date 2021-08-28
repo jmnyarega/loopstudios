@@ -1,5 +1,12 @@
 @import './abstract/colors';
 
 body {
-    background-color: $bg-color;
+    font-size: 0.9375rem;
+}
+
+.container {
+    max-width: 90rem;
+    width: 90%;
+
+    margin: 0 auto;
 }

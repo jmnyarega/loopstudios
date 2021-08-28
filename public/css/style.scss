@@ -1,7 +1,4 @@
 @import './global';
 @import './reset';
-@import './components/button';
-
-body {
-    font-size: 1.125rem;
-}
+@import './components/hamburger';
+@import './components/header';

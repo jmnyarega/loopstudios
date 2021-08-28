@@ -1,7 +1,10 @@
+@import './abstract/colors';
+@import './abstract/fonts';
+
 @import './global';
 @import './reset';
-@import './components/button';
-
-body {
-    font-size: 1.125rem;
-}
+@import './components/hamburger';
+@import './components/header';
+@import './components/hero';
+@import './components/intro';
+@import './components/creations';

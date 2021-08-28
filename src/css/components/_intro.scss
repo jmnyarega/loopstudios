@@ -1,0 +1,60 @@
+.intro {
+    margin-top: 6rem;
+    text-align: center;
+
+    &__img {
+        @media (min-width: 60rem) {
+            width: 57%;
+            object-fit: cover;
+            max-height: 31.25rem;
+        }
+    }
+
+    @media (min-width: 60rem) {
+        display: flex;
+        justify-content: space-between;
+        text-align: initial;
+    }
+
+    &__content {
+        padding: 3rem 2rem 0 2rem;
+        @media (min-width:60rem) {
+            width: 49%;
+            align-self: flex-end;
+            background-color: $white;
+            transform: translateX(-30%);
+
+            padding: 3rem 0 0 2rem;
+        }
+
+        @media (min-width: 90rem) {
+            transform: translateX(-30%);
+            padding: 6rem 0 0 6rem;
+        }
+    }
+
+    &__title {
+        max-width: 20ch;
+        margin-inline: auto;
+        font-family: $ff-alt;
+        font-size: 2rem;
+        line-height: 1;
+        font-weight: normal;
+        text-transform: uppercase;
+        @media (min-width: 60rem) {
+            margin-inline: initial;
+            font-size: 3rem;
+        }
+    }
+
+    &__text {
+        max-width: 46ch;
+        margin-inline: auto;
+        margin-top: 1.5rem;
+        opacity: 0.8;
+        @media (min-width: 60rem) {
+            margin-inline: initial;
+            margin-top: 0;
+        }
+    }
+}
