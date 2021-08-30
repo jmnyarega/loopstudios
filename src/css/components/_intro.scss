@@ -2,14 +2,6 @@
     margin-top: 6rem;
     text-align: center;
 
-    &__img {
-        @media (min-width: 60rem) {
-            width: 57%;
-            object-fit: cover;
-            max-height: 31.25rem;
-        }
-    }
-
     @media (min-width: 60rem) {
         display: flex;
         justify-content: space-between;

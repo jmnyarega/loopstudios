@@ -1,0 +1,122 @@
+---
+layout: "index.njk"
+title: Loopstudios
+images:
+  [
+    {
+      name: "one",
+      mobile: "./images/mobile/image-deep-earth.jpg",
+      desktop: "./images/desktop/image-deep-earth.jpg",
+      alt: "deep earth",
+    },
+    {
+      name: "two",
+      mobile: "./images/mobile/image-night-arcade.jpg",
+      desktop: "./images/desktop/image-night-arcade.jpg",
+      alt: "night arcade",
+    },
+    {
+      name: "three",
+      mobile: "./images/mobile/image-soccer-team.jpg",
+      desktop: "./images/desktop/image-soccer-team.jpg",
+      alt: "soccer team",
+    },
+    {
+      name: "four",
+      mobile: "./images/mobile/image-grid.jpg",
+      desktop: "./images/desktop/image-grid.jpg",
+      alt: "the grid",
+    },
+    {
+      name: "five",
+      mobile: "./images/mobile/image-from-above.jpg",
+      desktop: "./images/desktop/image-from-above.jpg",
+      alt: "from up above vr",
+    },
+    {
+      name: "six",
+      mobile: "./images/mobile/image-pocket-borealis.jpg",
+      desktop: "./images/desktop/image-pocket-borealis.jpg",
+      alt: "pocket borealis",
+    },
+    {
+      name: "seven",
+      mobile: "./images/mobile/image-curiosity.jpg",
+      desktop: "./images/desktop/image-curiosity.jpg",
+      alt: "the curiosity",
+    },
+    {
+      name: "eight",
+      mobile: "./images/mobile/image-fisheye.jpg",
+      desktop: "./images/desktop/image-fisheye.jpg",
+      alt: "make it fisheye",
+    },
+  ]
+---
+
+<!-- header -->
+<header class="header">
+  <div class="header__navigation container">
+    <img src="./images/logo.svg" alt="Loopstudios - Home" />
+    <input type="checkbox" id="toggle" />
+    <label class="hamburger" for="toggle">
+      <span class="top"> </span>
+      <span class="middle"> </span>
+      <span class="bottom"> </span>
+    </label>
+    <nav class="nav">
+      <ul class="nav__items container">
+        <li class="nav__item">
+          <a href="#0" class="nav__link"> about </a>
+        </li>
+        <li class="nav__item">
+          <a href="#0" class="nav__link"> careers </a>
+        </li>
+        <li class="nav__item">
+          <a href="#0" class="nav__link"> events </a>
+        </li>
+        <li class="nav__item">
+          <a href="#0" class="nav__link"> products </a>
+        </li>
+        <li class="nav__item">
+          <a href="#0" class="nav__link"> support </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <section class="hero container">
+    <!-- <h1 class="hero__title">Immersive experiences that deliver</h1> -->
+    <p class="hero__title">Immersive experiences that deliver</p>
+  </section>
+</header>
+<!-- header -->
+<main>
+  <section class="intro container">
+    <picture class="intro__img">
+      <source
+        srcset="./images/desktop/image-interactive.jpg"
+        media="(min-width: 45rem)"
+      />
+      <img src="./images/mobile/image-interactive.jpg" alt="" />
+    </picture>
+    <div class="intro__content">
+      <h2 class="intro__title">The leader in interactive VR</h2>
+      <p class="intro__text">
+        Founded in 2011, Loopstudios has been producing world-class virtual
+        reality projects for some of the best companies around the globe. Our
+        award-winning creations have transformed businesses through digital
+        experiences that bind to their brand.
+      </p>
+    </div>
+  </section>
+  <section class="creations container">
+    <h2 class="creations__title">our creations</h2>
+    {%- for image in images -%}
+    <picture class="{{ image.name }}" data-caption="{{ image.alt }}">
+      <source srcset="{{image.desktop}}" media="(min-width: 45rem)" />
+      <img src="{{ image.mobile }}" alt="{{ image.alt }}" />
+    </picture>
+    {%- endfor -%}
+    <a href="#0" class="creations__button"> see all </a>
+  </section>
+</main>
