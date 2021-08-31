@@ -53,6 +53,7 @@
 
         &__link {
             text-decoration: none;
+            outline: none;
             text-transform: uppercase;
 
             font-family: $ff-alt;
@@ -80,7 +81,7 @@
                 transition: all 200ms linear;
             }
 
-            &:hover::after {
+            &:hover::after, &:focus::after {
                 left: 0;
                 right: 0;
             }

@@ -100,11 +100,21 @@
         text-decoration: none;
         text-transform: uppercase;
         color: $black;
-        padding: 0.9375em 2.6875em;
         font-size: 0.875rem;
-        outline: 1px solid;
+
+        padding: 0.9375em 2.6875em;
+        border: 1px solid;
         max-width: 50%;
         margin-inline: auto;
+
+        transition: all 200ms linear;
+
+        &:hover, &:focus {
+            color: $white;
+            background-color: $black;
+            outline: 1px solid;
+            outline-offset: -5px;
+        }
 
         @media (min-width: 45rem) {
             grid-area: button;
