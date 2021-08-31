@@ -14,5 +14,9 @@
 
     margin-top: 10rem;
     max-width: 13ch;
-    margin-inline: auto;
+
+    @media (min-width: 45rem) {
+        font-size: 4.5rem;
+        margin-left: calc(0.1 * 100vw);
+    }
 }

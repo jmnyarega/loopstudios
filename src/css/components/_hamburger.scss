@@ -15,6 +15,9 @@
     span + span {
         margin-top: 5px;
     }
+    @media (min-width: 45rem) {
+        display: none;
+    }
 }
 
 #toggle:checked + label > .top {

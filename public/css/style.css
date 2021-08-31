@@ -8,7 +8,7 @@ body {
   width: 90%;
   margin: 0 auto;
 }
-@media (min-width: 60rem) {
+@media (min-width: 45rem) {
   .container {
     width: 80%;
   }
@@ -107,6 +107,11 @@ img:not([alt]) {
 .hamburger span + span {
   margin-top: 5px;
 }
+@media (min-width: 45rem) {
+  .hamburger {
+    display: none;
+  }
+}
 
 #toggle:checked + label > .top {
   transform: translateY(0.45rem) rotateZ(45deg);
@@ -126,6 +131,11 @@ img:not([alt]) {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 40.625rem;
+}
+@media (min-width: 45rem) {
+  .header {
+    background-image: url(../../images/desktop/image-hero.jpg);
+  }
 }
 .header__navigation {
   display: flex;
@@ -157,17 +167,27 @@ img:not([alt]) {
   flex-direction: column;
   gap: 1.5rem 0;
 }
-.header .nav__item {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.5rem;
-  font-weight: lighter;
+@media (min-width: 45rem) {
+  .header .nav__items {
+    flex-direction: row;
+    gap: 0 1.5rem;
+  }
 }
 .header .nav__link {
   text-decoration: none;
   text-transform: uppercase;
-  font: inherit;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: lighter;
   color: white;
   position: relative;
+}
+@media (min-width: 45rem) {
+  .header .nav__link {
+    font-size: 0.9375rem;
+    text-transform: capitalize;
+    font-family: inherit;
+  }
 }
 .header .nav__link::after {
   content: "";
@@ -182,6 +202,16 @@ img:not([alt]) {
 .header .nav__link:hover::after {
   left: 0;
   right: 0;
+}
+@media (min-width: 45rem) {
+  .header .nav {
+    position: initial;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    z-index: 1;
+    background-color: transparent;
+  }
 }
 
 #toggle:checked ~ .nav {
@@ -202,7 +232,12 @@ img:not([alt]) {
   padding: 1.5rem;
   margin-top: 10rem;
   max-width: 13ch;
-  margin-inline: auto;
+}
+@media (min-width: 45rem) {
+  .hero {
+    font-size: 4.5rem;
+    margin-left: calc(0.1 * 100vw);
+  }
 }
 
 .intro {
@@ -216,27 +251,41 @@ img:not([alt]) {
     text-align: initial;
   }
 }
+.intro__img, .intro img {
+  max-width: initial;
+  width: 100%;
+}
+@media (min-width: 60rem) {
+  .intro__img, .intro img {
+    width: initial;
+  }
+}
 .intro__content {
   padding: 3rem 2rem 0 2rem;
 }
 @media (min-width: 60rem) {
   .intro__content {
-    width: 49%;
     align-self: flex-end;
     background-color: white;
-    transform: translateX(-30%);
-    padding: 3rem 0 0 2rem;
+    transform: translateX(-90%);
+    padding: 3rem 0 0 5%;
+    transition: all 250ms linear;
   }
 }
-@media (min-width: 90rem) {
+@media (min-width: 70rem) {
+  .intro__content {
+    transform: translateX(-60%);
+  }
+}
+@media (min-width: 85rem) {
   .intro__content {
     transform: translateX(-30%);
-    padding: 6rem 0 0 6rem;
   }
 }
 .intro__title {
   max-width: 20ch;
   margin-inline: auto;
+  margin-bottom: 1.5rem;
   font-family: "Josefin Sans", sans-serif;
   font-size: 2rem;
   line-height: 1;
@@ -250,7 +299,7 @@ img:not([alt]) {
   }
 }
 .intro__text {
-  max-width: 46ch;
+  max-width: 45ch;
   margin-inline: auto;
   margin-top: 1.5rem;
   opacity: 0.8;
@@ -259,6 +308,7 @@ img:not([alt]) {
   .intro__text {
     margin-inline: initial;
     margin-top: 0;
+    width: 45ch;
   }
 }
 
@@ -271,7 +321,9 @@ img:not([alt]) {
 }
 .creations picture {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 300ms linear;
 }
 .creations picture::after {
   content: attr(data-caption);
@@ -282,6 +334,18 @@ img:not([alt]) {
   position: absolute;
   bottom: 1.625rem;
   left: 1.25rem;
+  transition: all 300ms linear;
+}
+@media (min-width: 60rem) {
+  .creations picture::after {
+    font-size: 2rem;
+  }
+}
+.creations picture:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.creations picture:hover::after {
+  bottom: 10%;
 }
 .creations picture img {
   mix-blend-mode: multiply;
@@ -344,6 +408,11 @@ img:not([alt]) {
     grid-area: title;
     margin-inline: initial;
     margin-bottom: 0;
+  }
+}
+@media (min-width: 60rem) {
+  .creations__title {
+    font-size: 3rem;
   }
 }
 .creations__button {
