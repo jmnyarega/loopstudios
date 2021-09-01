@@ -223,21 +223,28 @@ img:not([alt]) {
 }
 
 .hero {
+  color: white;
+  outline: 2px solid currentColor;
+  padding: 1.5rem;
+  width: max-content;
+  margin-top: 10rem;
+}
+@media (min-width: 45rem) {
+  .hero {
+    margin-left: calc(0.1 * 100vw);
+  }
+}
+.hero__title {
   font-family: "Josefin Sans", sans-serif;
   font-size: 2.5rem;
   font-weight: lighter;
   text-transform: uppercase;
-  color: white;
   line-height: 1;
-  outline: 2px solid currentColor;
-  padding: 1.5rem;
-  margin-top: 10rem;
-  max-width: 13ch;
+  max-width: 12ch;
 }
 @media (min-width: 45rem) {
-  .hero {
+  .hero__title {
     font-size: 4.5rem;
-    margin-left: calc(0.1 * 100vw);
   }
 }
 
@@ -320,13 +327,14 @@ img:not([alt]) {
   align-items: center;
   grid-gap: 1.5rem;
 }
-.creations picture {
+.creations__item {
   position: relative;
   background-color: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
   transition: all 300ms linear;
+  outline: none;
+  cursor: pointer;
 }
-.creations picture::after {
+.creations__item::after {
   content: attr(data-caption);
   text-transform: uppercase;
   color: white;
@@ -338,18 +346,25 @@ img:not([alt]) {
   transition: all 300ms linear;
 }
 @media (min-width: 60rem) {
-  .creations picture::after {
+  .creations__item::after {
     font-size: 2rem;
   }
 }
-.creations picture:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+@media (min-width: 45rem) {
+  .creations__item::after {
+    margin-inline: auto;
+    max-width: 10ch;
+  }
 }
-.creations picture:hover::after {
+.creations__item:hover::after, .creations__item:focus::after {
+  color: black;
   bottom: 10%;
 }
-.creations picture img {
-  mix-blend-mode: multiply;
+.creations__item:hover, .creations__item:focus {
+  background-color: white;
+}
+.creations__item:hover img, .creations__item:focus img {
+  filter: blur(1px) opacity(0.5);
 }
 @media (min-width: 45rem) {
   .creations {
@@ -437,7 +452,7 @@ img:not([alt]) {
   .creations__button {
     grid-area: button;
     margin-inline: initial;
-    margin-left: auto;
+    justify-self: end;
   }
 }
 

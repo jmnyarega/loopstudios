@@ -8,11 +8,13 @@
     align-items: center;
     grid-gap: 1.5rem;
 
-    picture {
+    &__item {
         position: relative;
         background-color: hsla(0 0% 0% / 0.5);
-        cursor: pointer;
         transition: all 300ms linear;
+
+        outline: none;
+        cursor: pointer;
 
         &::after {
             content: attr(data-caption);
@@ -20,34 +22,44 @@
             color: $white;
             font-size: 1.5rem;
             font-family: $ff-alt;
+
             position: absolute;
             bottom: 1.625rem;
             left: 1.25rem;
+
             transition: all 300ms linear;
 
             @media (min-width: 60rem) {
                 font-size: 2rem;
             }
+
+            @media (min-width: 45rem) {
+                margin-inline: auto;
+                max-width: 10ch;
+            }
         }
 
-        &:hover {
-            background-color: hsla(0 0% 0% / 0.8);
+        &:hover, &:focus {
             &::after {
+                color: $black;
                 bottom: 10%;
             }
         }
 
-        img {
-            mix-blend-mode: multiply;
+        &:hover, &:focus {
+            background-color: $white;
+            img {
+                filter: blur(1px) opacity(0.5);
+            }
         }
     }
 
     @media (min-width: 45rem) {
         grid-template-areas: "title  title  button  button"  
-        "one    one    two     two"  
-        "three  three  four    four"  
-        "five   five   six     six"  
-        "seven  seven  eight   eight";  
+                             "one    one    two     two"
+                             "three  three  four    four"
+                             "five   five   six     six"
+                             "seven  seven  eight   eight"; 
         grid-template-rows: repeat(3, auto);
         grid-template-columns: repeat(4, 1fr);
         text-align: initial;
@@ -119,7 +131,7 @@
         @media (min-width: 45rem) {
             grid-area: button;
             margin-inline: initial;
-            margin-left: auto;
+            justify-self: end;
         }
     }
 }

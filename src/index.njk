@@ -19,7 +19,7 @@ images:
       name: "three",
       mobile: "./images/mobile/image-soccer-team.jpg",
       desktop: "./images/desktop/image-soccer-team.jpg",
-      alt: "soccer team",
+      alt: "soccer team vr",
     },
     {
       name: "four",
@@ -57,17 +57,17 @@ images:
 <!-- header -->
 <header class="header">
   <div class="header__navigation container">
-    <img src="./images/logo.svg" alt="Loopstudios - Home" />
-    <input type="checkbox" id="toggle" />
-    <label class="hamburger" for="toggle">
+    <img src="./images/logo.svg" alt="{{ title }} - Home" />
+    <input type="checkbox" id="toggle" onchange="return toggle()" />
+    <label class="hamburger" for="toggle" aria-controls="menu">
       <span class="top"> </span>
       <span class="middle"> </span>
       <span class="bottom"> </span>
     </label>
-    <nav class="nav">
+    <nav class="nav" id="menu">
       <ul class="nav__items container">
         <li class="nav__item">
-          <a href="#0" class="nav__link"> about </a>
+          <a href="#intro" class="nav__link"> about </a>
         </li>
         <li class="nav__item">
           <a href="#0" class="nav__link"> careers </a>
@@ -76,7 +76,7 @@ images:
           <a href="#0" class="nav__link"> events </a>
         </li>
         <li class="nav__item">
-          <a href="#0" class="nav__link"> products </a>
+          <a href="#creations" class="nav__link"> products </a>
         </li>
         <li class="nav__item">
           <a href="#0" class="nav__link"> support </a>
@@ -85,43 +85,55 @@ images:
     </nav>
   </div>
   <section class="hero container">
-    <!-- <h1 class="hero__title">Immersive experiences that deliver</h1> -->
-    <p class="hero__title">Immersive experiences that deliver</p>
+    <h1 class="hero__title">Immersive experiences that deliver</h1>
   </section>
 </header>
 <!-- header -->
+
+<!-- main -->
 <main>
-  <section class="intro container">
+  <section class="intro container" id="intro">
     <picture class="intro__img">
       <source
         srcset="./images/desktop/image-interactive.jpg"
         media="(min-width: 60rem)"
       />
-      <img src="./images/mobile/image-interactive.jpg" alt="" />
+      <img src="./images/mobile/image-interactive.jpg" alt="A man using VR" />
     </picture>
     <div class="intro__content">
       <h2 class="intro__title">The leader in interactive VR</h2>
       <p class="intro__text">
-        Founded in 2011, Loopstudios has been producing world-class virtual
+        Founded in 2011, {{ title }} has been producing world-class virtual
         reality projects for some of the best companies around the globe. Our
         award-winning creations have transformed businesses through digital
         experiences that bind to their brand.
       </p>
     </div>
   </section>
-  <section class="creations container">
+
+  <section class="creations container" id="creations">
     <h2 class="creations__title">our creations</h2>
     {%- for image in images -%}
-    <picture class="{{ image.name }}" data-caption="{{ image.alt }}">
-      <source srcset="{{image.desktop}}" media="(min-width: 45rem)" />
-      <img src="{{ image.mobile }}" alt="{{ image.alt }}" />
-    </picture>
+    <a
+      href="#0"
+      class="{{ image.name }} creations__item"
+      data-caption="{{ image.alt }}"
+    >
+      <picture>
+        <source srcset="{{image.desktop}}" media="(min-width: 45rem)" />
+        <img src="{{ image.mobile }}" alt="{{ image.alt }}" />
+      </picture>
+    </a>
     {%- endfor -%}
     <a href="#0" class="creations__button"> see all </a>
   </section>
   <footer class="footer">
     <div class="container">
-      <img class="footer__img" src="./images/logo.svg" alt="logo footer" />
+      <img
+        class="footer__img"
+        src="./images/logo.svg"
+        alt="{{ title }} footer"
+      />
       <ul class="footer__links">
         <li><a class="footer__link" href="#0">about</a></li>
         <li><a class="footer__link" href="#0">careers</a></li>
@@ -156,3 +168,17 @@ images:
     </div>
   </footer>
 </main>
+<!-- main -->
+
+<!-- script -->
+<script>
+  const checkbox = document.getElementById("toggle");
+  const label = document.querySelector("#toggle + label");
+
+  function toggle() {
+    checkbox.checked
+      ? label.setAttribute("aria-expanded", true)
+      : label.setAttribute("aria-expanded", false);
+  }
+</script>
+<!-- script -->

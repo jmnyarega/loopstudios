@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loopstudios</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,16 +25,16 @@
 <header class="header">
   <div class="header__navigation container">
     <img src="./images/logo.svg" alt="Loopstudios - Home" />
-    <input type="checkbox" id="toggle" />
-    <label class="hamburger" for="toggle">
+    <input type="checkbox" id="toggle" onchange="return toggle()" />
+    <label class="hamburger" for="toggle" aria-controls="menu">
       <span class="top"> </span>
       <span class="middle"> </span>
       <span class="bottom"> </span>
     </label>
-    <nav class="nav">
+    <nav class="nav" id="menu">
       <ul class="nav__items container">
         <li class="nav__item">
-          <a href="#0" class="nav__link"> about </a>
+          <a href="#intro" class="nav__link"> about </a>
         </li>
         <li class="nav__item">
           <a href="#0" class="nav__link"> careers </a>
@@ -37,7 +43,7 @@
           <a href="#0" class="nav__link"> events </a>
         </li>
         <li class="nav__item">
-          <a href="#0" class="nav__link"> products </a>
+          <a href="#creations" class="nav__link"> products </a>
         </li>
         <li class="nav__item">
           <a href="#0" class="nav__link"> support </a>
@@ -46,19 +52,20 @@
     </nav>
   </div>
   <section class="hero container">
-    <!-- <h1 class="hero__title">Immersive experiences that deliver</h1> -->
-    <p class="hero__title">Immersive experiences that deliver</p>
+    <h1 class="hero__title">Immersive experiences that deliver</h1>
   </section>
 </header>
 <!-- header -->
+
+<!-- main -->
 <main>
-  <section class="intro container">
+  <section class="intro container" id="intro">
     <picture class="intro__img">
       <source
         srcset="./images/desktop/image-interactive.jpg"
         media="(min-width: 60rem)"
       />
-      <img src="./images/mobile/image-interactive.jpg" alt="" />
+      <img src="./images/mobile/image-interactive.jpg" alt="A man using VR" />
     </picture>
     <div class="intro__content">
       <h2 class="intro__title">The leader in interactive VR</h2>
@@ -70,36 +77,89 @@
       </p>
     </div>
   </section>
-  <section class="creations container">
-    <h2 class="creations__title">our creations</h2><picture class="one" data-caption="deep earth">
-      <source srcset="./images/desktop/image-deep-earth.jpg" media="(min-width: 45rem)" />
-      <img src="./images/mobile/image-deep-earth.jpg" alt="deep earth" />
-    </picture><picture class="two" data-caption="night arcade">
-      <source srcset="./images/desktop/image-night-arcade.jpg" media="(min-width: 45rem)" />
-      <img src="./images/mobile/image-night-arcade.jpg" alt="night arcade" />
-    </picture><picture class="three" data-caption="soccer team">
-      <source srcset="./images/desktop/image-soccer-team.jpg" media="(min-width: 45rem)" />
-      <img src="./images/mobile/image-soccer-team.jpg" alt="soccer team" />
-    </picture><picture class="four" data-caption="the grid">
-      <source srcset="./images/desktop/image-grid.jpg" media="(min-width: 45rem)" />
-      <img src="./images/mobile/image-grid.jpg" alt="the grid" />
-    </picture><picture class="five" data-caption="from up above vr">
-      <source srcset="./images/desktop/image-from-above.jpg" media="(min-width: 45rem)" />
-      <img src="./images/mobile/image-from-above.jpg" alt="from up above vr" />
-    </picture><picture class="six" data-caption="pocket borealis">
-      <source srcset="./images/desktop/image-pocket-borealis.jpg" media="(min-width: 45rem)" />
-      <img src="./images/mobile/image-pocket-borealis.jpg" alt="pocket borealis" />
-    </picture><picture class="seven" data-caption="the curiosity">
-      <source srcset="./images/desktop/image-curiosity.jpg" media="(min-width: 45rem)" />
-      <img src="./images/mobile/image-curiosity.jpg" alt="the curiosity" />
-    </picture><picture class="eight" data-caption="make it fisheye">
-      <source srcset="./images/desktop/image-fisheye.jpg" media="(min-width: 45rem)" />
-      <img src="./images/mobile/image-fisheye.jpg" alt="make it fisheye" />
-    </picture><a href="#0" class="creations__button"> see all </a>
+
+  <section class="creations container" id="creations">
+    <h2 class="creations__title">our creations</h2><a
+      href="#0"
+      class="one creations__item"
+      data-caption="deep earth"
+    >
+      <picture>
+        <source srcset="./images/desktop/image-deep-earth.jpg" media="(min-width: 45rem)" />
+        <img src="./images/mobile/image-deep-earth.jpg" alt="deep earth" />
+      </picture>
+    </a><a
+      href="#0"
+      class="two creations__item"
+      data-caption="night arcade"
+    >
+      <picture>
+        <source srcset="./images/desktop/image-night-arcade.jpg" media="(min-width: 45rem)" />
+        <img src="./images/mobile/image-night-arcade.jpg" alt="night arcade" />
+      </picture>
+    </a><a
+      href="#0"
+      class="three creations__item"
+      data-caption="soccer team vr"
+    >
+      <picture>
+        <source srcset="./images/desktop/image-soccer-team.jpg" media="(min-width: 45rem)" />
+        <img src="./images/mobile/image-soccer-team.jpg" alt="soccer team vr" />
+      </picture>
+    </a><a
+      href="#0"
+      class="four creations__item"
+      data-caption="the grid"
+    >
+      <picture>
+        <source srcset="./images/desktop/image-grid.jpg" media="(min-width: 45rem)" />
+        <img src="./images/mobile/image-grid.jpg" alt="the grid" />
+      </picture>
+    </a><a
+      href="#0"
+      class="five creations__item"
+      data-caption="from up above vr"
+    >
+      <picture>
+        <source srcset="./images/desktop/image-from-above.jpg" media="(min-width: 45rem)" />
+        <img src="./images/mobile/image-from-above.jpg" alt="from up above vr" />
+      </picture>
+    </a><a
+      href="#0"
+      class="six creations__item"
+      data-caption="pocket borealis"
+    >
+      <picture>
+        <source srcset="./images/desktop/image-pocket-borealis.jpg" media="(min-width: 45rem)" />
+        <img src="./images/mobile/image-pocket-borealis.jpg" alt="pocket borealis" />
+      </picture>
+    </a><a
+      href="#0"
+      class="seven creations__item"
+      data-caption="the curiosity"
+    >
+      <picture>
+        <source srcset="./images/desktop/image-curiosity.jpg" media="(min-width: 45rem)" />
+        <img src="./images/mobile/image-curiosity.jpg" alt="the curiosity" />
+      </picture>
+    </a><a
+      href="#0"
+      class="eight creations__item"
+      data-caption="make it fisheye"
+    >
+      <picture>
+        <source srcset="./images/desktop/image-fisheye.jpg" media="(min-width: 45rem)" />
+        <img src="./images/mobile/image-fisheye.jpg" alt="make it fisheye" />
+      </picture>
+    </a><a href="#0" class="creations__button"> see all </a>
   </section>
   <footer class="footer">
     <div class="container">
-      <img class="footer__img" src="./images/logo.svg" alt="logo footer" />
+      <img
+        class="footer__img"
+        src="./images/logo.svg"
+        alt="Loopstudios footer"
+      />
       <ul class="footer__links">
         <li><a class="footer__link" href="#0">about</a></li>
         <li><a class="footer__link" href="#0">careers</a></li>
@@ -134,6 +194,20 @@
     </div>
   </footer>
 </main>
+<!-- main -->
+
+<!-- script -->
+<script>
+  const checkbox = document.getElementById("toggle");
+  const label = document.querySelector("#toggle + label");
+
+  function toggle() {
+    checkbox.checked
+      ? label.setAttribute("aria-expanded", true)
+      : label.setAttribute("aria-expanded", false);
+  }
+</script>
+<!-- script -->
 
   </body>
 </html>
