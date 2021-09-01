@@ -88,7 +88,7 @@ images:
     <h1 class="hero__title">Immersive experiences that deliver</h1>
   </section>
 </header>
-<!-- header -->
+<!--end-of header -->
 
 <!-- main -->
 <main>
@@ -113,62 +113,65 @@ images:
 
   <section class="creations container" id="creations">
     <h2 class="creations__title">our creations</h2>
-    {%- for image in images -%}
-    <a
-      href="#0"
-      class="{{ image.name }} creations__item"
-      data-caption="{{ image.alt }}"
-    >
-      <picture>
-        <source srcset="{{image.desktop}}" media="(min-width: 45rem)" />
-        <img src="{{ image.mobile }}" alt="{{ image.alt }}" />
-      </picture>
-    </a>
-    {%- endfor -%}
+    <ul class="creations__items">
+      {%- for image in images -%}
+      <li class="creations__item" data-caption="{{ image.alt }}">
+        <a href="#0" class="{{ image.name }} creations__link">
+          <picture>
+            <source srcset="{{image.desktop}}" media="(min-width: 45rem)" />
+            <img src="{{ image.mobile }}" alt="{{ image.alt }}" />
+          </picture>
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
     <a href="#0" class="creations__button"> see all </a>
   </section>
-  <footer class="footer">
-    <div class="container">
-      <img
-        class="footer__img"
-        src="./images/logo.svg"
-        alt="{{ title }} footer"
-      />
-      <ul class="footer__links">
-        <li><a class="footer__link" href="#0">about</a></li>
-        <li><a class="footer__link" href="#0">careers</a></li>
-        <li><a href="#0" class="footer__link">events</a></li>
-        <li><a href="#0" class="footer__link">products</a></li>
-        <li><a href="#0" class="footer__link">support</a></li>
-      </ul>
-      <ul class="footer__social">
-        <li>
-          <a href="#0">
-            <!-- asdasd -->
-            <img src="./images/icon-facebook.svg" alt="Facebook" />
-          </a>
-        </li>
-        <li>
-          <a href="#0">
-            <img src="./images/icon-twitter.svg" alt="Twitter" />
-          </a>
-        </li>
-        <li>
-          <a href="#0">
-            <img src="./images/icon-pinterest.svg" alt="Pinterest" />
-          </a>
-        </li>
-        <li>
-          <a href="#0">
-            <img src="./images/icon-instagram.svg" alt="Instagram" />
-          </a>
-        </li>
-      </ul>
-      <p class="footer__copyright">&copy; {{ title }}. All rights reversed.</p>
-    </div>
-  </footer>
 </main>
-<!-- main -->
+<!-- end-of main -->
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container">
+    <img
+      class="footer__img"
+      src="./images/logo.svg"
+      alt="{{ title }} - footer"
+    />
+    <ul class="footer__links">
+      <li><a class="footer__link" href="#0">about</a></li>
+      <li><a class="footer__link" href="#0">careers</a></li>
+      <li><a href="#0" class="footer__link">events</a></li>
+      <li><a href="#0" class="footer__link">products</a></li>
+      <li><a href="#0" class="footer__link">support</a></li>
+    </ul>
+    <ul class="footer__social">
+      <li>
+        <a href="#0">
+          <!-- asdasd -->
+          <img src="./images/icon-facebook.svg" alt="Facebook" />
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="./images/icon-twitter.svg" alt="Twitter" />
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="./images/icon-pinterest.svg" alt="Pinterest" />
+        </a>
+      </li>
+      <li>
+        <a href="#0">
+          <img src="./images/icon-instagram.svg" alt="Instagram" />
+        </a>
+      </li>
+    </ul>
+    <p class="footer__copyright">&copy; {{ title }}. All rights reversed.</p>
+  </div>
+</footer>
+<!-- end-of footer -->
 
 <!-- script -->
 <script>
@@ -181,4 +184,4 @@ images:
       : label.setAttribute("aria-expanded", false);
   }
 </script>
-<!-- script -->
+<!-- end-of script -->
